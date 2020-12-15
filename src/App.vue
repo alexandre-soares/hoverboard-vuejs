@@ -28,8 +28,19 @@
         class="input"
         v-model="squares"
       />
+      <h2>Squares Color</h2>
+      <p class="text">Change the background color of the squares</p>
+      <input
+        type="color"
+        class="square-background-color"
+        v-model="squareBackgroundColor"
+      />
     </div>
-    <Home :squares="+squares" :colors="colors" />
+    <Home
+      :squares="+squares"
+      :colors="colors"
+      :squareBackgroundColor="squareBackgroundColor"
+    />
     <div class="icon" @click="isNavOpen = !isNavOpen">
       <i class="fas fa-cogs"></i>
     </div>
@@ -46,7 +57,8 @@ export default {
       squares: 810,
       isNavOpen: false,
       colors: ["#e74c3c", "#8e44ad", "#3498db", "#e67e22", "#2ecc71"],
-      color: null
+      color: null,
+      squareBackgroundColor: "#474747"
     };
   },
   components: {
@@ -180,5 +192,11 @@ body {
 .add-color .fa-plus {
   background-color: transparent;
   border: none;
+}
+
+.square-background-color {
+  border: none;
+  height: 5rem !important;
+  width: 5rem !important;
 }
 </style>

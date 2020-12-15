@@ -7,6 +7,7 @@
       :key="i.index"
       @mouseenter="setColor"
       @mouseout="removeColor"
+      :style="'background-color: ' + squareBackgroundColor"
     ></div>
   </div>
 </template>
@@ -23,10 +24,15 @@ export default {
     colors: {
       type: Array,
       default: null
+    },
+    squareBackgroundColor: {
+      type: String,
+      default: "#474747"
     }
   },
   mounted() {
     this.createGrid();
+    console.log(this.squareBackgroundColor);
   },
   methods: {
     createGrid() {
@@ -50,7 +56,7 @@ export default {
     },
     removeColor(event) {
       const element = event.target;
-      element.style.background = "#474747";
+      element.style.background = this.squareBackgroundColor;
       element.style.boxShadow = "0 0 2px #000";
     },
     getRandomColor() {
@@ -81,7 +87,6 @@ h1 {
 }
 
 .square {
-  background-color: #474747;
   box-shadow: 0 0 2px #000;
   height: 1.6rem;
   width: 1.6rem;
