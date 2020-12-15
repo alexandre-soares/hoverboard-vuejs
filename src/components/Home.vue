@@ -1,5 +1,6 @@
 <template>
   <div class="container" id="container">
+    <h1>HOVERBOARD</h1>
     <div
       class="square"
       v-for="i in squares"
@@ -67,6 +68,16 @@ export default {
   justify-content: center;
   flex-wrap: wrap;
   max-width: 60rem;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+  color: #aaa;
+  width: 100%;
+  letter-spacing: 3px;
+  font-weight: 100;
+  font-size: 3.2rem;
 }
 
 .square {

@@ -3,7 +3,7 @@
     <div class="settings" :class="isNavOpen ? 'open' : 'close'">
       <h1>Settings</h1>
       <h2>Colors</h2>
-      <p>Add more colours</p>
+      <p class="text">Add more colours or delete ones by clicking on them</p>
       <div class="square-container">
         <span
           class="square-color"
@@ -19,7 +19,7 @@
         <button @click.prevent="addColor"><i class="fas fa-plus"></i></button>
       </div>
       <h2>Squares</h2>
-      <p>Change the number of squares</p>
+      <p class="text">Change the number of squares</p>
       <input
         type="number"
         name="number"
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap");
 
 #app {
   width: 100vw;
@@ -106,6 +106,7 @@ body {
   cursor: pointer;
   color: lightgray;
 }
+
 .settings {
   height: 100vh;
   width: 30rem;
@@ -116,6 +117,7 @@ body {
   z-index: 999;
   background-color: lightgray;
   transition: 0.3s ease-in-out;
+  padding: 1.2rem;
 }
 
 .settings.close {
@@ -124,6 +126,10 @@ body {
 
 .settings.open {
   transform: translateX(0);
+}
+
+.text {
+  font-size: 1.4rem;
 }
 
 .settings input {
@@ -152,6 +158,7 @@ body {
   width: 4rem;
   display: inline-block;
   margin: 1rem;
+  cursor: pointer;
 }
 
 .add-color {
